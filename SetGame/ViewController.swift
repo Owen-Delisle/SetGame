@@ -14,21 +14,36 @@ class ViewController: UIViewController {
 
 
     @IBAction func threeMoreButton(_ sender: Any) {
-        for index in 1...3 {
-            if let card = game.deck.drawCard() {
-                let cardAboveFrame = cardButtons[cardButtons.count - index].frame
-                let x = cardAboveFrame.minX + cardAboveFrame.width
-                let y = cardAboveFrame.minY + cardAboveFrame.height
-                let width = cardAboveFrame.width
-                let height = cardAboveFrame.height
+        if cardButtons.count < 24 {
+            var temp = [CardButton]()
+            for index in 0...2 {
+                if let card = game.deck.drawCard() {
 
-                let button = CardButton(frame: CGRect(x: x, y: y, width: width, height: height))
-                button.setCardButtonTitle(with: card)
+                    game.cardsInPlay.append(card)
 
-                self.view.addSubview(button)
+                    let cardAboveFrame = cardButtons[cardButtons.count - 1 - index].frame
+                    let x = cardAboveFrame.minX
+                    let y = cardAboveFrame.minY + cardAboveFrame.height + 8
+                    let width = cardAboveFrame.width
+                    let height = cardAboveFrame.height
+
+                    let button = CardButton(frame: CGRect(x: x, y: y, width: width, height: height))
+                    button.setupButton(card: card)
+
+                    temp.append(button)
+                    self.view.addSubview(button)
+                    button.addTarget(self, action: #selector(touchCard), for: .touchUpInside)
+                }
             }
+            for index in 0...temp.count - 1 {
+                cardButtons.append(temp[index])
+            }
+            game.updateCardButtons(cardButtons: cardButtons)
+            temp = []
         }
     }
+
+
 
     @IBAction func touchCard(_ sender: CardButton) {
         print("touched")

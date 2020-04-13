@@ -20,11 +20,16 @@ struct Game {
         self.cardButtons = cardButtons
     }
 
+    public mutating func updateCardButtons(cardButtons:[CardButton]) {
+        self.cardButtons = cardButtons
+    }
+
     public mutating func chooseCard(at index: Int) {
         addToSet(card: cardsInPlay[index])
     }
     public mutating func addToSet(card: Card) {
         set.append(card)
+        cardButtons[cardsInPlay.firstIndex(of: card)!].select()
         if set.count == 3 {
             checkForSet()
             set = []
@@ -38,14 +43,17 @@ struct Game {
             for index in 0..<set.count {
                 if let card = deck.drawCard() {
                     self.cardButtons[cardsInPlay.firstIndex(of: set[index])!].setCardButtonTitle(with: card)
+                    self.cardButtons[cardsInPlay.firstIndex(of: set[index])!].deselect()
                     cardsInPlay[cardsInPlay.firstIndex(of: set[index])!] = card
                 } else {
                     self.cardButtons[cardsInPlay.firstIndex(of: set[index])!].removeFromSuperview()
+                    self.cardButtons[cardsInPlay.firstIndex(of: set[index])!].deselect()
                 }
             }
         } else {
             for index in 0..<set.count {
                 self.cardButtons[cardsInPlay.firstIndex(of: set[index])!].shake()
+                self.cardButtons[cardsInPlay.firstIndex(of: set[index])!].deselect()
             }
         }
     }

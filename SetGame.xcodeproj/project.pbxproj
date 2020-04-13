@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		83435D572444F9C800FF9C0D /* CardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83435D562444F9C800FF9C0D /* CardButton.swift */; };
+		83435D592445162200FF9C0D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83435D582445162100FF9C0D /* Constants.swift */; };
 		83FD484224035AC100488A1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FD484124035AC100488A1E /* AppDelegate.swift */; };
 		83FD484424035AC100488A1E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FD484324035AC100488A1E /* SceneDelegate.swift */; };
 		83FD484624035AC100488A1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FD484524035AC100488A1E /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		83435D562444F9C800FF9C0D /* CardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButton.swift; sourceTree = "<group>"; };
+		83435D582445162100FF9C0D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		83FD483E24035AC100488A1E /* SetGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SetGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83FD484124035AC100488A1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83FD484324035AC100488A1E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				83FD484724035AC100488A1E /* Main.storyboard */,
 				83FD484F24035AC200488A1E /* Info.plist */,
 				83435D562444F9C800FF9C0D /* CardButton.swift */,
+				83435D582445162100FF9C0D /* Constants.swift */,
 			);
 			path = SetGame;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				83FD484624035AC100488A1E /* ViewController.swift in Sources */,
 				83FD484224035AC100488A1E /* AppDelegate.swift in Sources */,
 				83FD484424035AC100488A1E /* SceneDelegate.swift in Sources */,
+				83435D592445162200FF9C0D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,10 +15,12 @@ class CardButton: UIButton {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupButton()
     }
 
-    func setupButton() {
+    func setupButton(card: Card) {
+        backgroundColor      = Colors.coolBlue
+        titleLabel?.font     = UIFont.systemFont(ofSize: 30)
+        setCardButtonTitle(with: card)
     }
 
     public func setCardButtonTitle(with card: Card) {
@@ -55,6 +57,16 @@ class CardButton: UIButton {
         shake.toValue       = toValue
 
         layer.add(shake, forKey: "position")
+    }
+
+    func select() {
+        layer.borderWidth    = 3.0
+        layer.borderColor    = UIColor.darkGray.cgColor
+    }
+
+    func deselect() {
+        layer.borderWidth    = 0.0
+        layer.borderColor    = nil
     }
 }
 
