@@ -19,10 +19,9 @@ class CardButton: UIButton {
     }
 
     func setupButton() {
-
     }
 
-    private func setCardButtonTitle(with card: Card) {
+    public func setCardButtonTitle(with card: Card) {
         let attributes: [NSAttributedString.Key:Any] = [
             .strokeWidth: card.fill.strokeWidth,
             .strokeColor: card.color.c,
@@ -58,3 +57,8 @@ class CardButton: UIButton {
         layer.add(shake, forKey: "position")
     }
 }
+
+//        let newButton = UIButton.init(type: .roundedRect)
+//        newButton.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
+//        newButton.setTitle("poo", for: .normal)
+//        self.view.addSubview(newButton)

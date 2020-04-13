@@ -10,9 +10,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet var cardButtons: [UIButton]!
+    @IBOutlet var cardButtons: [CardButton]!
 
-    @IBAction func touchCard(_ sender: UIButton) {
+
+    @IBAction func threeMoreButton(_ sender: Any) {
+        for index in 1...3 {
+            if let card = game.deck.drawCard() {
+                let cardAboveFrame = cardButtons[cardButtons.count - index].frame
+                let x = cardAboveFrame.minX + cardAboveFrame.width
+                let y = cardAboveFrame.minY + cardAboveFrame.height
+                let width = cardAboveFrame.width
+                let height = cardAboveFrame.height
+
+                let button = CardButton(frame: CGRect(x: x, y: y, width: width, height: height))
+                button.setCardButtonTitle(with: card)
+
+                self.view.addSubview(button)
+            }
+        }
+    }
+
+    @IBAction func touchCard(_ sender: CardButton) {
         print("touched")
         if let cardNumber = cardButtons.firstIndex(of: sender) {
             game.chooseCard(at: cardNumber)
@@ -29,32 +47,10 @@ class ViewController: UIViewController {
             let button = cardButtons[index]
             if let card = game.deck.drawCard() {
                 game.cardsInPlay.append(card)
-                setCardButtonTitle(for: button, with: card)
+                button.setCardButtonTitle(with: card)
             } else {
                 button.removeFromSuperview()
             }
         }
-//        let newButton = UIButton.init(type: .roundedRect)
-//        newButton.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
-//        newButton.setTitle("poo", for: .normal)
-//        self.view.addSubview(newButton)
-    }
-
-    public func setCardButtonTitle(for button: UIButton, with card: Card) {
-        let attributes: [NSAttributedString.Key:Any] = [
-            .strokeWidth: card.fill.strokeWidth,
-                .strokeColor: card.color.c,
-                .foregroundColor: card.color.c.withAlphaComponent(card.fill.alpha)
-        ]
-        let attributedString = NSAttributedString(string: repeatTitle(card: card), attributes: attributes)
-        button.setAttributedTitle(attributedString, for: UIControl.State.normal)
-    }
-
-    private func repeatTitle(card: Card) -> String {
-        var buttonTitle: String = ""
-        for _ in 0..<card.number.rawValue {
-            buttonTitle += "\(card.shape.rawValue)"
-        }
-        return buttonTitle
     }
 }

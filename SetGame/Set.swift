@@ -13,10 +13,10 @@ struct Game {
     var deck = CardDeck()
     private var set = [Card]()
     private var viewController = ViewController()
-    private var cardButtons = [UIButton]()
+    private var cardButtons = [CardButton]()
     public var cardsInPlay = [Card]()
 
-    init(cardButtons:[UIButton]) {
+    init(cardButtons:[CardButton]) {
         self.cardButtons = cardButtons
     }
 
@@ -37,14 +37,16 @@ struct Game {
         if cardOneCardTwo == cardTwoCardThree && cardOneCardTwo == cardOneCardThree {
             for index in 0..<set.count {
                 if let card = deck.drawCard() {
-                    viewController.setCardButtonTitle(for: self.cardButtons[cardsInPlay.firstIndex(of: set[index])!], with: card)
+                    self.cardButtons[cardsInPlay.firstIndex(of: set[index])!].setCardButtonTitle(with: card)
                     cardsInPlay[cardsInPlay.firstIndex(of: set[index])!] = card
                 } else {
                     self.cardButtons[cardsInPlay.firstIndex(of: set[index])!].removeFromSuperview()
                 }
             }
         } else {
-            print("not set")
+            for index in 0..<set.count {
+                self.cardButtons[cardsInPlay.firstIndex(of: set[index])!].shake()
+            }
         }
     }
     func compareAttributes(lhs: Card, rhs: Card) -> [String] {
