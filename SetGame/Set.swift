@@ -13,7 +13,7 @@ struct Game {
     var deck = CardDeck()
     private var set = [Card]()
     private var viewController = ViewController()
-    private var cardButtons = [CardButton]()
+    public var cardButtons = [CardButton]()
     public var cardsInPlay = [Card]()
 
     init(cardButtons:[CardButton]) {
@@ -27,6 +27,7 @@ struct Game {
     public mutating func chooseCard(at index: Int) {
         addToSet(card: cardsInPlay[index])
     }
+
     public mutating func addToSet(card: Card) {
         set.append(card)
         cardButtons[cardsInPlay.firstIndex(of: card)!].select()
@@ -35,28 +36,27 @@ struct Game {
             set = []
         }
     }
+
     private mutating func checkForSet() {
         let cardOneCardTwo = compareAttributes(lhs: set[0], rhs: set[1])
         let cardTwoCardThree = compareAttributes(lhs: set[1], rhs: set[2])
         let cardOneCardThree = compareAttributes(lhs: set[0], rhs: set[2])
         if cardOneCardTwo == cardTwoCardThree && cardOneCardTwo == cardOneCardThree {
-            for index in 0..<set.count {
-                if let card = deck.drawCard() {
-                    self.cardButtons[cardsInPlay.firstIndex(of: set[index])!].setCardButtonTitle(with: card)
-                    self.cardButtons[cardsInPlay.firstIndex(of: set[index])!].deselect()
-                    cardsInPlay[cardsInPlay.firstIndex(of: set[index])!] = card
-                } else {
-                    self.cardButtons[cardsInPlay.firstIndex(of: set[index])!].removeFromSuperview()
-                    self.cardButtons[cardsInPlay.firstIndex(of: set[index])!].deselect()
-                }
+            if indexGTTwelve() {
+                removeCardsInSet()
+                viewController.reorderCards(cardButtons: self.cardButtons, cardsInPlay: cardsInPlay)
+            } else {
+                replaceCards()
             }
         } else {
             for index in 0..<set.count {
-                self.cardButtons[cardsInPlay.firstIndex(of: set[index])!].shake()
-                self.cardButtons[cardsInPlay.firstIndex(of: set[index])!].deselect()
+                let cardButtonInSet = self.cardButtons[cardsInPlay.firstIndex(of: set[index])!]
+                cardButtonInSet.shake()
+                cardButtonInSet.deselect()
             }
         }
     }
+
     func compareAttributes(lhs: Card, rhs: Card) -> [String] {
         var equalAttributes = [String]()
         if lhs.color == rhs.color {
@@ -73,5 +73,39 @@ struct Game {
         }
         return equalAttributes
     }
-}
 
+    mutating func replaceCards() {
+        for index in 0..<set.count {
+            if let card = deck.drawCard() {
+                let cardButtonInSet = self.cardButtons[cardsInPlay.firstIndex(of: set[index])!]
+                cardButtonInSet.setCardButtonTitle(with: card)
+                cardButtonInSet.deselect()
+                cardsInPlay[cardsInPlay.firstIndex(of: set[index])!] = card
+            } else {
+                removeCardButtons(index: index)
+            }
+        }
+    }
+
+    func removeCardButtons(index: Int) {
+        let cardButtonInSet = self.cardButtons[cardsInPlay.firstIndex(of: set[index])!]
+        cardButtonInSet.removeFromSuperview()
+    }
+
+    func indexGTTwelve() -> Bool {
+        for index in 0..<set.count {
+            let cardButtonInSet = self.cardButtons[cardsInPlay.firstIndex(of: set[index])!]
+            if cardButtons.firstIndex(of: cardButtonInSet)! > 12 {
+                return true
+            }
+        }
+        return false
+    }
+
+    mutating func removeCardsInSet() {
+        for index in 0..<set.count {
+            self.cardButtons[cardsInPlay.firstIndex(of: set[index])!].deselect()
+            cardsInPlay.remove(at: cardsInPlay.firstIndex(of: set[index])!)
+        }
+    }
+}

@@ -12,9 +12,32 @@ class ViewController: UIViewController {
 
     @IBOutlet var cardButtons: [CardButton]!
 
+    private lazy var game = Game(cardButtons: cardButtons)
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        for index in 0..<cardButtons.count {
+            let button = cardButtons[index]
+            if let card = game.deck.drawCard() {
+                game.cardsInPlay.append(card)
+                button.setupButton(card: card)
+            } else {
+                button.removeFromSuperview()
+            }
+        }
+    }
+
+    @IBAction func touchCard(_ sender: CardButton) {
+        print("touched")
+        if let cardNumber = cardButtons.firstIndex(of: sender) {
+            game.chooseCard(at: cardNumber)
+        } else {
+            print("broken")
+        }
+    }
 
     @IBAction func threeMoreButton(_ sender: Any) {
-        if cardButtons.count < 24 {
+        if game.cardsInPlay.count < 24 {
             var temp = [CardButton]()
             for index in 0...2 {
                 if let card = game.deck.drawCard() {
@@ -43,29 +66,13 @@ class ViewController: UIViewController {
         }
     }
 
-
-
-    @IBAction func touchCard(_ sender: CardButton) {
-        print("touched")
-        if let cardNumber = cardButtons.firstIndex(of: sender) {
-            game.chooseCard(at: cardNumber)
-        } else {
-            print("broken")
+    func reorderCards(cardButtons: [CardButton], cardsInPlay: [Card]) {
+        for index in 0..<cardsInPlay.count {
+            cardButtons[index].setupButton(card: cardsInPlay[index])
         }
-    }
 
-    private lazy var game = Game(cardButtons: cardButtons)
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        for index in 0..<cardButtons.count {
-            let button = cardButtons[index]
-            if let card = game.deck.drawCard() {
-                game.cardsInPlay.append(card)
-                button.setCardButtonTitle(with: card)
-            } else {
-                button.removeFromSuperview()
-            }
+        for index in cardsInPlay.count..<cardButtons.count {
+            cardButtons[index].removeFromSuperview()
         }
     }
 }
