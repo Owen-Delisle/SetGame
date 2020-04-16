@@ -15,6 +15,7 @@ struct Game {
     private var viewController = ViewController()
     public var cardButtons = [CardButton]()
     public var cardsInPlay = [Card]()
+    public var score = 0
 
     init(cardButtons:[CardButton]) {
         self.cardButtons = cardButtons
@@ -25,7 +26,13 @@ struct Game {
     }
 
     public mutating func chooseCard(at index: Int) {
-        addToSet(card: cardsInPlay[index])
+        let cardInSet = cardsInPlay[index]
+        if set.contains(cardInSet) {
+            cardButtons[cardsInPlay.firstIndex(of: cardInSet)!].deselect()
+            set.remove(at: set.firstIndex(of: cardsInPlay[index])!)
+        } else {
+            addToSet(card: cardsInPlay[index])
+        }
     }
 
     public mutating func addToSet(card: Card) {
@@ -44,15 +51,17 @@ struct Game {
         if cardOneCardTwo == cardTwoCardThree && cardOneCardTwo == cardOneCardThree {
             if indexGTTwelve() {
                 removeCardsInSet()
-                viewController.reorderCards(cardButtons: self.cardButtons, cardsInPlay: cardsInPlay)
+                reorderCards(cardsInPlay: cardsInPlay)
             } else {
                 replaceCards()
             }
+            score += 1
         } else {
             for index in 0..<set.count {
-                let cardButtonInSet = self.cardButtons[cardsInPlay.firstIndex(of: set[index])!]
+                let cardButtonInSet = cardButtons[cardsInPlay.firstIndex(of: set[index])!]
                 cardButtonInSet.shake()
                 cardButtonInSet.deselect()
+                score -= 1
             }
         }
     }
@@ -107,5 +116,17 @@ struct Game {
             self.cardButtons[cardsInPlay.firstIndex(of: set[index])!].deselect()
             cardsInPlay.remove(at: cardsInPlay.firstIndex(of: set[index])!)
         }
+    }
+
+    mutating func reorderCards(cardsInPlay: [Card]) {
+        for index in 0..<cardsInPlay.count {
+            cardButtons[index].setupButton(card: cardsInPlay[index])
+        }
+
+        for index in cardsInPlay.count..<cardButtons.count {
+            cardButtons[index].removeFromSuperview()
+        }
+        
+        cardButtons.removeLast(3)
     }
 }

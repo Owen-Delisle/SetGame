@@ -18,6 +18,7 @@ class CardButton: UIButton {
     }
 
     func setupButton(card: Card) {
+        deselect()
         backgroundColor      = Colors.coolBlue
         titleLabel?.font     = UIFont.systemFont(ofSize: 30)
         setCardButtonTitle(with: card)
@@ -61,7 +62,7 @@ class CardButton: UIButton {
 
     func select() {
         layer.borderWidth    = 3.0
-        layer.borderColor    = UIColor.darkGray.cgColor
+        layer.borderColor    = Colors.coolOrange.cgColor
     }
 
     func deselect() {
@@ -69,8 +70,3 @@ class CardButton: UIButton {
         layer.borderColor    = nil
     }
 }
-
-//        let newButton = UIButton.init(type: .roundedRect)
-//        newButton.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
-//        newButton.setTitle("poo", for: .normal)
-//        self.view.addSubview(newButton)

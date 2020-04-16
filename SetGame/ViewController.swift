@@ -12,12 +12,24 @@ class ViewController: UIViewController {
 
     @IBOutlet var cardButtons: [CardButton]!
 
+    @IBOutlet weak var cardsLeftLabel: UILabel! {
+        didSet {
+            updateCardsLeftLabel()
+        }
+    }
+
+    @IBOutlet weak var scoreLabel: UILabel! {
+        didSet {
+            updateScoreLabel()
+        }
+    }
+
     private lazy var game = Game(cardButtons: cardButtons)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        for index in 0..<cardButtons.count {
-            let button = cardButtons[index]
+        for index in 0..<game.cardButtons.count {
+            let button = game.cardButtons[index]
             if let card = game.deck.drawCard() {
                 game.cardsInPlay.append(card)
                 button.setupButton(card: card)
@@ -29,8 +41,9 @@ class ViewController: UIViewController {
 
     @IBAction func touchCard(_ sender: CardButton) {
         print("touched")
-        if let cardNumber = cardButtons.firstIndex(of: sender) {
+        if let cardNumber = game.cardButtons.firstIndex(of: sender) {
             game.chooseCard(at: cardNumber)
+            updateLabels()
         } else {
             print("broken")
         }
@@ -44,7 +57,7 @@ class ViewController: UIViewController {
 
                     game.cardsInPlay.append(card)
 
-                    let cardAboveFrame = cardButtons[cardButtons.count - 1 - index].frame
+                    let cardAboveFrame = game.cardButtons[game.cardButtons.count - 1 - index].frame
                     let x = cardAboveFrame.minX
                     let y = cardAboveFrame.minY + cardAboveFrame.height + 8
                     let width = cardAboveFrame.width
@@ -58,21 +71,21 @@ class ViewController: UIViewController {
                     button.addTarget(self, action: #selector(touchCard), for: .touchUpInside)
                 }
             }
-            for index in 0...temp.count - 1 {
-                cardButtons.append(temp[index])
-            }
-            game.updateCardButtons(cardButtons: cardButtons)
+            game.cardButtons.append(contentsOf: temp)
             temp = []
         }
     }
 
-    func reorderCards(cardButtons: [CardButton], cardsInPlay: [Card]) {
-        for index in 0..<cardsInPlay.count {
-            cardButtons[index].setupButton(card: cardsInPlay[index])
-        }
+    func updateLabels() {
+        updateScoreLabel()
+        updateCardsLeftLabel()
+    }
 
-        for index in cardsInPlay.count..<cardButtons.count {
-            cardButtons[index].removeFromSuperview()
-        }
+    func updateScoreLabel() {
+        scoreLabel.text = "Score: \(game.score)"
+    }
+
+    func updateCardsLeftLabel() {
+        cardsLeftLabel.text = "Cards Left: \(game.deck.cards.count + game.cardsInPlay.count)"
     }
 }
