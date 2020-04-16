@@ -40,7 +40,6 @@ class ViewController: UIViewController {
     }
 
     @IBAction func touchCard(_ sender: CardButton) {
-        print("touched")
         if let cardNumber = game.cardButtons.firstIndex(of: sender) {
             game.chooseCard(at: cardNumber)
             updateLabels()
