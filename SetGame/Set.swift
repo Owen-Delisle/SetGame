@@ -13,15 +13,15 @@ struct Game {
     var deck = CardDeck()
     private var set = [Card]()
     private var viewController = ViewController()
-    public var cardButtons = [CardButton]()
+    public var cardButtons = [CardButtonView]()
     public var cardsInPlay = [Card]()
     public var score = 0
 
-    init(cardButtons:[CardButton]) {
+    init(cardButtons:[CardButtonView]) {
         self.cardButtons = cardButtons
     }
 
-    public mutating func updateCardButtons(cardButtons:[CardButton]) {
+    public mutating func updateCardButtons(cardButtons:[CardButtonView]) {
         self.cardButtons = cardButtons
     }
 

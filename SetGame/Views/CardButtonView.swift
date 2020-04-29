@@ -1,45 +1,35 @@
 //
-//  CardButton.swift
+//  CardButtonView.swift
 //  SetGame
 //
-//  Created by Owen Delisle on 2020-04-13.
+//  Created by Owen Delisle on 2020-04-21.
 //  Copyright © 2020 Owen Delisle. All rights reserved.
 //
 
 import UIKit
 
-class CardButton: UIButton {
+class CardButtonView: UIView {
 
-    var cardButtonView = CardButtonView()
+    override func draw(_ rect: CGRect) {
+        let diamondView = SquiggleView(frame: CGRect(x: 0, y: 0, width: bounds.size.width * 0.75, height: bounds.size.height * 0.75))
+        let roundedRect = UIBezierPath(roundedRect: bounds, cornerRadius: 0)
+        roundedRect.addClip()
+        Colors.coolBlue.setFill()
+        roundedRect.fill()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        self.addSubview(diamondView)
     }
 
     func setupButton(card: Card) {
-        deselect()
-        backgroundColor      = Colors.coolBlue
-        titleLabel?.font     = UIFont.systemFont(ofSize: 30)
-        setCardButtonTitle(with: card)
+//        deselect()
+//        backgroundColor      = Colors.coolBlue
+//        setCardButtonTitle(with: card)
     }
 
     public func setCardButtonTitle(with card: Card) {
-        
-    }
 
-    private func repeatTitle(card: Card) -> String {
-        var buttonTitle: String = ""
-        for _ in 0..<card.number.rawValue {
-            buttonTitle += "\(card.shape.rawValue)"
-        }
-        return buttonTitle
     }
-
+    
     func shake() {
         let shake           = CABasicAnimation(keyPath: "position")
         shake.duration      = 0.1

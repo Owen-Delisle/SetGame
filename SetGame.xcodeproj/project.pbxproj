@@ -7,8 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83202920244FEEFC00F294BF /* CardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8320291F244FEEFC00F294BF /* CardButtonView.swift */; };
+		83202944245008AF00F294BF /* CATransaction+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83202937245008AE00F294BF /* CATransaction+Extension.swift */; };
+		83202945245008AF00F294BF /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83202938245008AE00F294BF /* ShapeView.swift */; };
+		83202946245008AF00F294BF /* CGPath+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83202939245008AE00F294BF /* CGPath+SVG.swift */; };
+		83202947245008AF00F294BF /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8320293A245008AE00F294BF /* TextView.swift */; };
+		83202948245008AF00F294BF /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8320293B245008AE00F294BF /* Timeline.swift */; };
+		83202949245008AF00F294BF /* NSMutableParagraphStyle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8320293C245008AE00F294BF /* NSMutableParagraphStyle+Extension.swift */; };
+		8320294A245008AF00F294BF /* NSShadow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8320293D245008AE00F294BF /* NSShadow+Extension.swift */; };
+		8320294B245008AF00F294BF /* CAMediaTimingFunction+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8320293E245008AF00F294BF /* CAMediaTimingFunction+Extension.swift */; };
+		8320294C245008AF00F294BF /* CAKeyframeAnimation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8320293F245008AF00F294BF /* CAKeyframeAnimation+Extension.swift */; };
+		8320294D245008AF00F294BF /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83202940245008AF00F294BF /* Animation.swift */; };
+		8320294E245008AF00F294BF /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83202941245008AF00F294BF /* UIView+Extension.swift */; };
+		8320294F245008AF00F294BF /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83202942245008AF00F294BF /* Sound.swift */; };
+		83202950245008AF00F294BF /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83202943245008AF00F294BF /* UIImage+Extension.swift */; };
+		83202970245011B500F294BF /* OvalArtboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8320296E245011B500F294BF /* OvalArtboardView.swift */; };
+		83202971245011B500F294BF /* OvalTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8320296F245011B500F294BF /* OvalTimeline.swift */; };
+		832029752450128500F294BF /* DiamondTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832029732450128500F294BF /* DiamondTimeline.swift */; };
+		832029762450128500F294BF /* DiamondArtboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832029742450128500F294BF /* DiamondArtboardView.swift */; };
+		8320297A2450143000F294BF /* SquiggleArtboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832029782450143000F294BF /* SquiggleArtboardView.swift */; };
+		8320297B2450143000F294BF /* SquiggleTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832029792450143000F294BF /* SquiggleTimeline.swift */; };
 		83435D572444F9C800FF9C0D /* CardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83435D562444F9C800FF9C0D /* CardButton.swift */; };
 		83435D592445162200FF9C0D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83435D582445162100FF9C0D /* Constants.swift */; };
+		83EAA9C624593ECD0068D279 /* DiamondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EAA9C524593ECD0068D279 /* DiamondView.swift */; };
+		83EAA9C82459454E0068D279 /* OvalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EAA9C72459454E0068D279 /* OvalView.swift */; };
+		83EAA9CA245946150068D279 /* SquiggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EAA9C9245946150068D279 /* SquiggleView.swift */; };
 		83FD484224035AC100488A1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FD484124035AC100488A1E /* AppDelegate.swift */; };
 		83FD484424035AC100488A1E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FD484324035AC100488A1E /* SceneDelegate.swift */; };
 		83FD484624035AC100488A1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FD484524035AC100488A1E /* ViewController.swift */; };
@@ -21,8 +44,31 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8320291F244FEEFC00F294BF /* CardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButtonView.swift; sourceTree = "<group>"; };
+		83202937245008AE00F294BF /* CATransaction+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CATransaction+Extension.swift"; sourceTree = "<group>"; };
+		83202938245008AE00F294BF /* ShapeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
+		83202939245008AE00F294BF /* CGPath+SVG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPath+SVG.swift"; sourceTree = "<group>"; };
+		8320293A245008AE00F294BF /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		8320293B245008AE00F294BF /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		8320293C245008AE00F294BF /* NSMutableParagraphStyle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableParagraphStyle+Extension.swift"; sourceTree = "<group>"; };
+		8320293D245008AE00F294BF /* NSShadow+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSShadow+Extension.swift"; sourceTree = "<group>"; };
+		8320293E245008AF00F294BF /* CAMediaTimingFunction+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAMediaTimingFunction+Extension.swift"; sourceTree = "<group>"; };
+		8320293F245008AF00F294BF /* CAKeyframeAnimation+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAKeyframeAnimation+Extension.swift"; sourceTree = "<group>"; };
+		83202940245008AF00F294BF /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		83202941245008AF00F294BF /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		83202942245008AF00F294BF /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		83202943245008AF00F294BF /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		8320296E245011B500F294BF /* OvalArtboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OvalArtboardView.swift; sourceTree = "<group>"; };
+		8320296F245011B500F294BF /* OvalTimeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OvalTimeline.swift; sourceTree = "<group>"; };
+		832029732450128500F294BF /* DiamondTimeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiamondTimeline.swift; sourceTree = "<group>"; };
+		832029742450128500F294BF /* DiamondArtboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiamondArtboardView.swift; sourceTree = "<group>"; };
+		832029782450143000F294BF /* SquiggleArtboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquiggleArtboardView.swift; sourceTree = "<group>"; };
+		832029792450143000F294BF /* SquiggleTimeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquiggleTimeline.swift; sourceTree = "<group>"; };
 		83435D562444F9C800FF9C0D /* CardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButton.swift; sourceTree = "<group>"; };
 		83435D582445162100FF9C0D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		83EAA9C524593ECD0068D279 /* DiamondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiamondView.swift; sourceTree = "<group>"; };
+		83EAA9C72459454E0068D279 /* OvalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvalView.swift; sourceTree = "<group>"; };
+		83EAA9C9245946150068D279 /* SquiggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquiggleView.swift; sourceTree = "<group>"; };
 		83FD483E24035AC100488A1E /* SetGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SetGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83FD484124035AC100488A1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83FD484324035AC100488A1E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +93,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8320295524500A5C00F294BF /* FlowCommon */ = {
+			isa = PBXGroup;
+			children = (
+				83202940245008AF00F294BF /* Animation.swift */,
+				8320293F245008AF00F294BF /* CAKeyframeAnimation+Extension.swift */,
+				8320293E245008AF00F294BF /* CAMediaTimingFunction+Extension.swift */,
+				83202937245008AE00F294BF /* CATransaction+Extension.swift */,
+				83202939245008AE00F294BF /* CGPath+SVG.swift */,
+				8320293C245008AE00F294BF /* NSMutableParagraphStyle+Extension.swift */,
+				8320293D245008AE00F294BF /* NSShadow+Extension.swift */,
+				83202938245008AE00F294BF /* ShapeView.swift */,
+				83202942245008AF00F294BF /* Sound.swift */,
+				8320293A245008AE00F294BF /* TextView.swift */,
+				8320293B245008AE00F294BF /* Timeline.swift */,
+				83202943245008AF00F294BF /* UIImage+Extension.swift */,
+				83202941245008AF00F294BF /* UIView+Extension.swift */,
+			);
+			path = FlowCommon;
+			sourceTree = "<group>";
+		};
+		8320295624500AC700F294BF /* FlowFiles */ = {
+			isa = PBXGroup;
+			children = (
+				832029772450140400F294BF /* Squiggle */,
+				832029722450120400F294BF /* Diamond */,
+				8320295724500AD800F294BF /* Oval */,
+			);
+			path = FlowFiles;
+			sourceTree = "<group>";
+		};
+		8320295724500AD800F294BF /* Oval */ = {
+			isa = PBXGroup;
+			children = (
+				8320296E245011B500F294BF /* OvalArtboardView.swift */,
+				8320296F245011B500F294BF /* OvalTimeline.swift */,
+			);
+			path = Oval;
+			sourceTree = "<group>";
+		};
+		832029722450120400F294BF /* Diamond */ = {
+			isa = PBXGroup;
+			children = (
+				832029742450128500F294BF /* DiamondArtboardView.swift */,
+				832029732450128500F294BF /* DiamondTimeline.swift */,
+			);
+			path = Diamond;
+			sourceTree = "<group>";
+		};
+		832029772450140400F294BF /* Squiggle */ = {
+			isa = PBXGroup;
+			children = (
+				832029782450143000F294BF /* SquiggleArtboardView.swift */,
+				832029792450143000F294BF /* SquiggleTimeline.swift */,
+			);
+			path = Squiggle;
+			sourceTree = "<group>";
+		};
+		83EAA9C424593EAE0068D279 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8320291F244FEEFC00F294BF /* CardButtonView.swift */,
+				83EAA9C524593ECD0068D279 /* DiamondView.swift */,
+				83EAA9C72459454E0068D279 /* OvalView.swift */,
+				83EAA9C9245946150068D279 /* SquiggleView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		83FD483524035AC100488A1E = {
 			isa = PBXGroup;
 			children = (
@@ -66,7 +180,9 @@
 		83FD484024035AC100488A1E /* SetGame */ = {
 			isa = PBXGroup;
 			children = (
+				83EAA9C424593EAE0068D279 /* Views */,
 				83FD485524035ACA00488A1E /* Supporting Files */,
+				8320295624500AC700F294BF /* FlowFiles */,
 				83FD485A24035B1D00488A1E /* Card.swift */,
 				83FD485824035B1100488A1E /* CardDeck.swift */,
 				83FD485624035B0000488A1E /* Set.swift */,
@@ -82,6 +198,7 @@
 		83FD485524035ACA00488A1E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8320295524500A5C00F294BF /* FlowCommon */,
 				83FD484C24035AC200488A1E /* LaunchScreen.storyboard */,
 				83FD484A24035AC200488A1E /* Assets.xcassets */,
 				83FD484324035AC100488A1E /* SceneDelegate.swift */,
@@ -161,13 +278,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8320294B245008AF00F294BF /* CAMediaTimingFunction+Extension.swift in Sources */,
+				83202944245008AF00F294BF /* CATransaction+Extension.swift in Sources */,
 				83FD485724035B0000488A1E /* Set.swift in Sources */,
+				8320294A245008AF00F294BF /* NSShadow+Extension.swift in Sources */,
 				83FD485B24035B1D00488A1E /* Card.swift in Sources */,
+				8320297A2450143000F294BF /* SquiggleArtboardView.swift in Sources */,
+				83202947245008AF00F294BF /* TextView.swift in Sources */,
 				83435D572444F9C800FF9C0D /* CardButton.swift in Sources */,
+				8320294F245008AF00F294BF /* Sound.swift in Sources */,
 				83FD485924035B1100488A1E /* CardDeck.swift in Sources */,
+				832029752450128500F294BF /* DiamondTimeline.swift in Sources */,
+				83202950245008AF00F294BF /* UIImage+Extension.swift in Sources */,
+				83EAA9CA245946150068D279 /* SquiggleView.swift in Sources */,
+				8320294C245008AF00F294BF /* CAKeyframeAnimation+Extension.swift in Sources */,
+				83202970245011B500F294BF /* OvalArtboardView.swift in Sources */,
+				83202945245008AF00F294BF /* ShapeView.swift in Sources */,
+				83202920244FEEFC00F294BF /* CardButtonView.swift in Sources */,
+				83202971245011B500F294BF /* OvalTimeline.swift in Sources */,
+				8320297B2450143000F294BF /* SquiggleTimeline.swift in Sources */,
+				83202948245008AF00F294BF /* Timeline.swift in Sources */,
+				832029762450128500F294BF /* DiamondArtboardView.swift in Sources */,
 				83FD484624035AC100488A1E /* ViewController.swift in Sources */,
 				83FD484224035AC100488A1E /* AppDelegate.swift in Sources */,
+				8320294D245008AF00F294BF /* Animation.swift in Sources */,
+				83202946245008AF00F294BF /* CGPath+SVG.swift in Sources */,
 				83FD484424035AC100488A1E /* SceneDelegate.swift in Sources */,
+				83202949245008AF00F294BF /* NSMutableParagraphStyle+Extension.swift in Sources */,
+				83EAA9C82459454E0068D279 /* OvalView.swift in Sources */,
+				8320294E245008AF00F294BF /* UIView+Extension.swift in Sources */,
+				83EAA9C624593ECD0068D279 /* DiamondView.swift in Sources */,
 				83435D592445162200FF9C0D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

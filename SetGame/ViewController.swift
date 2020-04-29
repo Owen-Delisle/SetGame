@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet var cardButtons: [CardButton]!
+    @IBOutlet var cardButtons: [CardButtonView]!
 
     @IBOutlet weak var cardsLeftLabel: UILabel! {
         didSet {
@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBAction func touchCard(_ sender: CardButton) {
+    @IBAction func touchCard(_ sender: CardButtonView) {
         if let cardNumber = game.cardButtons.firstIndex(of: sender) {
             game.chooseCard(at: cardNumber)
             updateLabels()
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
 
     @IBAction func threeMoreButton(_ sender: Any) {
         if game.cardsInPlay.count < 24 {
-            var temp = [CardButton]()
+            var temp = [CardButtonView]()
             for index in 0...2 {
                 if let card = game.deck.drawCard() {
 
@@ -62,12 +62,12 @@ class ViewController: UIViewController {
                     let width = cardAboveFrame.width
                     let height = cardAboveFrame.height
 
-                    let button = CardButton(frame: CGRect(x: x, y: y, width: width, height: height))
+                    let button = CardButtonView(frame: CGRect(x: x, y: y, width: width, height: height))
                     button.setupButton(card: card)
 
                     temp.append(button)
                     self.view.addSubview(button)
-                    button.addTarget(self, action: #selector(touchCard), for: .touchUpInside)
+//                    button.addTarget(self, action: #selector(touchCard), for: .touchUpInside)
                 }
             }
             game.cardButtons.append(contentsOf: temp)
