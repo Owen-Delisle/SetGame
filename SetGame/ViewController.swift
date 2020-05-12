@@ -32,7 +32,7 @@ class ViewController: UIViewController {
             let button = game.cardButtons[index]
             if let card = game.deck.drawCard() {
                 game.cardsInPlay.append(card)
-                button.setupButton(card: card)
+                button.card = card
             } else {
                 button.removeFromSuperview()
             }
@@ -62,8 +62,8 @@ class ViewController: UIViewController {
                     let width = cardAboveFrame.width
                     let height = cardAboveFrame.height
 
-                    let button = CardButtonView(frame: CGRect(x: x, y: y, width: width, height: height))
-                    button.setupButton(card: card)
+                    let button = CardButtonView(frame: CGRect(x: x, y: y, width: width, height: height), card: card)
+//                    button.setupButton(card: card)
 
                     temp.append(button)
                     self.view.addSubview(button)

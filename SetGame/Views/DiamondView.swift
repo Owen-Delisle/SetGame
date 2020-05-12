@@ -9,14 +9,23 @@
 import UIKit
 
 class DiamondView: UIView {
-    
+
+    var color: UIColor?
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup(frame)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)    }
+        super.init(coder: aDecoder)
+    }
+
+    init(frame: CGRect, color: UIColor) {
+        super.init(frame: frame)
+        self.color = color
+        setup(frame)
+    }
     
     override func draw(_ rect: CGRect) {
         let path = UIBezierPath()
@@ -25,8 +34,8 @@ class DiamondView: UIView {
         path.addLine(to: CGPoint(x: bounds.midX, y: bounds.maxY))
         path.addLine(to: CGPoint(x: bounds.maxX, y: bounds.midY))
         path.close()
-        
-        self.layer.addSublayer(addShapeLayer(path: path))
+
+        self.layer.addSublayer(colorLayer(path: path, color: self.color))
     }
     
     func setup(_ frame: CGRect) {

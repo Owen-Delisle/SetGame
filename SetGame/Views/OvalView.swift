@@ -10,34 +10,48 @@ import UIKit
 
 class OvalView: UIView {
 
+    var color: UIColor?
+    var radius: CGFloat?
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup(frame)
     }
 
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)    }
+        super.init(coder: aDecoder)
+    }
+
+    init(frame: CGRect, color: UIColor, radius: CGFloat) {
+        super.init(frame: frame)
+        self.color = color
+        self.radius = radius
+        setup(frame)
+    }
 
     override func draw(_ rect: CGRect) {
         let path = UIBezierPath()
+        let radius = self.radius!
+        let startAngle = CGFloat.pi * 0.5
+        let endAngle = CGFloat.pi * 1.5
 
-        path.addArc(withCenter: CGPoint(x: bounds.minX + 20, y: bounds.midY),
-                    radius: 15,
-                    startAngle: CGFloat.pi * 0.5,
-                    endAngle: CGFloat.pi * 1.5,
+        path.addArc(withCenter: CGPoint(x: bounds.minX + radius, y: bounds.minY + radius),
+                    radius: radius,
+                    startAngle: startAngle,
+                    endAngle: endAngle,
                     clockwise: true)
 
-        path.addLine(to: CGPoint(x: bounds.maxX - 20, y: bounds.midY - 15))
+        path.addLine(to: CGPoint(x: bounds.maxX, y: bounds.minY))
 
-        path.addArc(withCenter: CGPoint(x: bounds.maxX - 20, y: bounds.midY),
-                    radius: 15,
-                    startAngle: CGFloat.pi * 1.5,
-                    endAngle: CGFloat.pi * 0.5,
+        path.addArc(withCenter: CGPoint(x: bounds.maxX, y: bounds.minY + radius),
+                    radius: radius,
+                    startAngle: endAngle,
+                    endAngle: startAngle,
                     clockwise: true)
 
         path.close()
 
-        self.layer.addSublayer(addShapeLayer(path: path))
+        self.layer.addSublayer(colorLayer(path: path, color: self.color))
     }
 
     func setup(_ frame: CGRect) {

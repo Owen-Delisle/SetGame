@@ -9,17 +9,27 @@
 import UIKit
 
 class SquiggleView: UIView {
+
+    var color: UIColor?
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup(frame)
     }
 
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)    }
+        super.init(coder: aDecoder)
+    }
+
+    init(frame: CGRect, color: UIColor) {
+        super.init(frame: frame)
+        self.color = color
+        setup(frame)
+    }
 
     override func draw(_ rect: CGRect) {
-        let offset: CGFloat = 20
-        let curveTwoOffset: CGFloat = 10
+        let offset: CGFloat = bounds.width * 0.30
+        let curveTwoOffset: CGFloat = bounds.width * 0.20
         let radius: CGFloat = 5
 
         let path = UIBezierPath()
@@ -54,7 +64,7 @@ class SquiggleView: UIView {
 
         path.addLine(to: CGPoint(x: bounds.minX + offset + curveTwoOffset , y: bounds.maxY - offset + curveTwoOffset))
 
-        self.layer.addSublayer(addShapeLayer(path: path))
+        self.layer.addSublayer(colorLayer(path: path, color: self.color))
     }
 
     func setup(_ frame: CGRect) {

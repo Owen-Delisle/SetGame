@@ -23,3 +23,14 @@ func addShapeLayer(path: UIBezierPath) -> CAShapeLayer {
 
     return shapeLayer
 }
+
+func colorLayer(path: UIBezierPath, color: UIColor?) -> CAShapeLayer {
+    let fillLayer = CAShapeLayer()
+    fillLayer.path = path.cgPath
+
+    if color != nil {
+        fillLayer.fillColor = color?.cgColor
+    }
+
+    return fillLayer
+}

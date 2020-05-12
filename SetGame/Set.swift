@@ -87,7 +87,7 @@ struct Game {
         for index in 0..<set.count {
             if let card = deck.drawCard() {
                 let cardButtonInSet = self.cardButtons[cardsInPlay.firstIndex(of: set[index])!]
-                cardButtonInSet.setCardButtonTitle(with: card)
+                cardButtonInSet.setCardButtonTitle(card: card, number: CGFloat(card.number.rawValue))
                 cardButtonInSet.deselect()
                 cardsInPlay[cardsInPlay.firstIndex(of: set[index])!] = card
             } else {
@@ -120,7 +120,9 @@ struct Game {
 
     mutating func reorderCards(cardsInPlay: [Card]) {
         for index in 0..<cardsInPlay.count {
-            cardButtons[index].setupButton(card: cardsInPlay[index])
+            let cardButton = cardButtons[index]
+            let cardInPlay = cardsInPlay[index]
+            cardButton.setupButton(card: cardInPlay, number: CGFloat(cardInPlay.number.rawValue))
         }
 
         for index in cardsInPlay.count..<cardButtons.count {

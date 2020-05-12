@@ -10,8 +10,6 @@ import UIKit
 
 class CardButton: UIButton {
 
-    var cardButtonView = CardButtonView()
-
     override init(frame: CGRect) {
         super.init(frame: frame)
 

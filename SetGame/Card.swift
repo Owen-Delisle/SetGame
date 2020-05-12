@@ -32,11 +32,11 @@ struct Card: Hashable
     }
 
     enum Shape: String {
-        case triangle = "\u{25B2}"
-        case circle = "\u{25CF}"
-        case square = "\u{25A0}"
+        case diamond = "diamond"
+        case oval = "oval"
+        case squiggle = "squiggle"
 
-        static var all = [Shape.triangle, Shape.circle, Shape.square]
+        static var all = [Shape.diamond, Shape.oval, Shape.squiggle]
     }
 
     enum Fill: String {

@@ -39,62 +39,47 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EYO-9b-jjO" customClass="CardButtonView" customModule="SetGame" customModuleProvider="target">
-                                <rect key="frame" x="25" y="141" width="85" height="75"/>
+                                <rect key="frame" x="20" y="141" width="115" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.5568627451" green="0.83921568629999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eK9-PG-hAW" customClass="CardButtonView" customModule="SetGame" customModuleProvider="target">
-                                <rect key="frame" x="118" y="141" width="85" height="75"/>
+                                <rect key="frame" x="150" y="141" width="115" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.5568627451" green="0.83921568629999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v1C-5H-i38" customClass="CardButtonView" customModule="SetGame" customModuleProvider="target">
-                                <rect key="frame" x="211" y="141" width="85" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.5568627451" green="0.83921568629999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yJA-UX-GbB" customClass="CardButtonView" customModule="SetGame" customModuleProvider="target">
-                                <rect key="frame" x="304" y="141" width="85" height="75"/>
+                                <rect key="frame" x="279" y="141" width="115" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.5568627451" green="0.83921568629999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M2u-fI-rha" customClass="CardButtonView" customModule="SetGame" customModuleProvider="target">
-                                <rect key="frame" x="25" y="224" width="85" height="75"/>
+                                <rect key="frame" x="20" y="224" width="115" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.5568627451" green="0.83921568629999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q6h-X2-T2Q" customClass="CardButtonView" customModule="SetGame" customModuleProvider="target">
-                                <rect key="frame" x="118" y="224" width="85" height="75"/>
+                                <rect key="frame" x="150" y="224" width="115" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.5568627451" green="0.83921568629999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cgo-vY-prU" customClass="CardButtonView" customModule="SetGame" customModuleProvider="target">
-                                <rect key="frame" x="211" y="224" width="85" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.5568627451" green="0.83921568629999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ORP-o7-0Zf" customClass="CardButtonView" customModule="SetGame" customModuleProvider="target">
-                                <rect key="frame" x="304" y="224" width="85" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.5568627451" green="0.83921568629999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GtA-0N-MKv" customClass="CardButtonView" customModule="SetGame" customModuleProvider="target">
-                                <rect key="frame" x="25" y="307" width="85" height="75"/>
+                                <rect key="frame" x="279" y="224" width="115" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.5568627451" green="0.83921568629999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fhx-UF-Igy" customClass="CardButtonView" customModule="SetGame" customModuleProvider="target">
-                                <rect key="frame" x="118" y="307" width="85" height="75"/>
+                                <rect key="frame" x="150" y="307" width="115" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.5568627451" green="0.83921568629999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TOB-ZS-iv7" customClass="CardButtonView" customModule="SetGame" customModuleProvider="target">
-                                <rect key="frame" x="211" y="307" width="85" height="75"/>
+                                <rect key="frame" x="279" y="307" width="115" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.5568627451" green="0.83921568629999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g8G-By-OlD" customClass="CardButtonView" customModule="SetGame" customModuleProvider="target">
-                                <rect key="frame" x="304" y="307" width="85" height="75"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GtA-0N-MKv" customClass="CardButtonView" customModule="SetGame" customModuleProvider="target">
+                                <rect key="frame" x="20" y="307" width="115" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.5568627451" green="0.83921568629999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -106,6 +91,14 @@
                         <outlet property="cardsLeftLabel" destination="Z6g-uK-dwU" id="nQK-nS-a7h"/>
                         <outlet property="scoreLabel" destination="I3w-tu-GJP" id="2t9-ir-358"/>
                         <outletCollection property="cardButtons" destination="EYO-9b-jjO" collectionClass="NSMutableArray" id="faP-4m-baI"/>
+                        <outletCollection property="cardButtons" destination="eK9-PG-hAW" collectionClass="NSMutableArray" id="bPd-LN-jff"/>
+                        <outletCollection property="cardButtons" destination="v1C-5H-i38" collectionClass="NSMutableArray" id="3jX-nK-ogt"/>
+                        <outletCollection property="cardButtons" destination="M2u-fI-rha" collectionClass="NSMutableArray" id="NLl-pb-Vq3"/>
+                        <outletCollection property="cardButtons" destination="Q6h-X2-T2Q" collectionClass="NSMutableArray" id="P8M-IT-k8V"/>
+                        <outletCollection property="cardButtons" destination="Cgo-vY-prU" collectionClass="NSMutableArray" id="BmN-mX-TRZ"/>
+                        <outletCollection property="cardButtons" destination="GtA-0N-MKv" collectionClass="NSMutableArray" id="2uo-4f-doB"/>
+                        <outletCollection property="cardButtons" destination="Fhx-UF-Igy" collectionClass="NSMutableArray" id="Mxo-Vg-zM9"/>
+                        <outletCollection property="cardButtons" destination="TOB-ZS-iv7" collectionClass="NSMutableArray" id="KDM-A4-jkS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
